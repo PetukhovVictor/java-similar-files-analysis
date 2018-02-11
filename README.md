@@ -8,6 +8,8 @@ You run the program on the two folders with java source code files which you wan
 
 The program use PSI representation source code (parsing using [java2psi](https://github.com/PetukhovVictor/java2psi)).
 
+Also the program use [ast-ngram-extractor](https://github.com/PetukhovVictor/ast-ngram-extractor) to generating n-grams by psi and [ast-set2matrix](https://github.com/PetukhovVictor/ast-set2matrix) to transform psi to vectors via generated n-grams.
+
 At the output, the program will generate a ranked similarity set of pairs of files.
 
 ### Program arguments
