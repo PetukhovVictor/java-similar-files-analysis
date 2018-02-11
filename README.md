@@ -1,11 +1,12 @@
 # java-similar-files-analysis
+
 Java source codes similar analysis
 
 ## Program use
 
 You run the program on the two folders with java source code files which you want to compare to similarities. The program analyzes only files with the `java` extension.
 
-The program use PSI representation source code (parsing using [java2psi](https://github.com/PetukhovVictor/java2psi))
+The program use PSI representation source code (parsing using [java2psi](https://github.com/PetukhovVictor/java2psi)).
 
 At the output, the program will generate a ranked similarity set of pairs of files.
 
