@@ -27,6 +27,17 @@ dependencies {
     compile name: 'java2psi-1.0-SNAPSHOT'
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.jetbrains.javasimilarfilesanalysis.MainKt'
+    }
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude ('META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA')
+
+    zip64 true
+}
+
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
