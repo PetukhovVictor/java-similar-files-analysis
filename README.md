@@ -22,3 +22,9 @@ At the output, the program will generate a ranked similarity set of pairs of fil
 To run program you must run `main` function in `main.kt`, not forgetting to set the program arguments.
 
 Also you run jar downloading it from the [release files](https://github.com/PetukhovVictor/java-similar-files-analysis/releases).
+
+#### Example of use
+
+```
+java -jar ./java-similar-files-analysis-0.1.jar --sources_1 ./java_sources_1 --sources_2 ./java_sources_2
+```
