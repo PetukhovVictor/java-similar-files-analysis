@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java-similar-files-analysis.iml" filepath="$PROJECT_DIR$/java-similar-files-analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-similar-files-analysis_main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-similar-files-analysis_main.iml" group="java-similar-files-analysis" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-similar-files-analysis_test.iml" filepath="$PROJECT_DIR$/.idea/modules/java-similar-files-analysis_test.iml" group="java-similar-files-analysis" />
+    </modules>
+  </component>
+</project>

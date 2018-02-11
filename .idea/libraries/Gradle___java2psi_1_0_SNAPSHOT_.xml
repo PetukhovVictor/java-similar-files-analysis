@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: :java2psi-1.0-SNAPSHOT:">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/java2psi-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
