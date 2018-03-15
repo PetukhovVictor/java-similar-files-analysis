@@ -7,8 +7,10 @@ Java source codes similar analysis
 You run the program on the two folders with java source code files which you want to compare to similarities. The program analyzes only files with the `java` extension.
 
 The program use PSI representation source code (parsing using [java2psi](https://github.com/PetukhovVictor/java2psi)).
+You need to add `java2psi` to the local maven repository: `gradle publishToMavenLocal`
 
 Also the program use [ast-ngram-extractor](https://github.com/PetukhovVictor/ast-ngram-extractor) to generating n-grams by psi and [ast-set2matrix](https://github.com/PetukhovVictor/ast-set2matrix) to transform psi to vectors via generated n-grams.
+This programs use as git submodules.
 
 At the output, the program will generate a ranked similarity set of pairs of files.
 
