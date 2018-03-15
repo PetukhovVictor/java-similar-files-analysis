@@ -16,15 +16,17 @@ apply plugin: 'kotlin'
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    jcenter()
     flatDir {
         dirs 'libs'
     }
 }
 
 dependencies {
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile group: 'org.python', name: 'jython', version: '2.5.0'
-    compile name: 'java2psi-1.0-SNAPSHOT'
+    compile "org.jetbrains.java2psi:java2psi:0.1"
 }
 
 jar {

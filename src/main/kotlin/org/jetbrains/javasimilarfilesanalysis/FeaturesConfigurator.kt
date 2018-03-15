@@ -7,43 +7,41 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 
-class FeaturesConfigurator {
-    companion object {
-        private fun convertToArray(features: Map<String, Int>): ArrayList<JSONArray> {
-            val featuresArray = arrayListOf<JSONArray>()
+object FeaturesConfigurator {
+    private fun convertToArray(features: Map<String, Int>): ArrayList<JSONArray> {
+        val featuresArray = arrayListOf<JSONArray>()
 
-            features.map {
-                featuresArray.add(JSONArray(it.key.split(':')))
-            }
-
-            return featuresArray
+        features.map {
+            featuresArray.add(JSONArray(it.key.split(':')))
         }
 
-        private fun wrap(features: JSONArray): JSONArray {
-            val root = JSONArray()
-            val allNgramConfigItem = JSONObject()
+        return featuresArray
+    }
 
-            allNgramConfigItem.put("type", "all_ngrams")
-            allNgramConfigItem.put("params", JSONObject(
-                    mapOf("n" to 3, "max_distance" to 3, "no_normalize" to true, "include_strict" to features))
-            )
+    private fun wrap(features: JSONArray): JSONArray {
+        val root = JSONArray()
+        val allNgramConfigItem = JSONObject()
 
-            root.put(allNgramConfigItem)
+        allNgramConfigItem.put("type", "all_ngrams")
+        allNgramConfigItem.put("params", JSONObject(
+                mapOf("n" to 3, "max_distance" to 3, "no_normalize" to true, "include_strict" to features))
+        )
 
-            return root
-        }
+        root.put(allNgramConfigItem)
 
-        fun write(featuresConfigFile: String, configurationJson: JSONArray) {
-            File(featuresConfigFile).writeText(configurationJson.toString())
-        }
+        return root
+    }
 
-        fun createConfiguration(featuresFile: String, featuresConfigFile: String) {
-            val objectMapper = ObjectMapper()
-            val features = objectMapper.readValue<Map<String, Int>>(File(featuresFile))
-            val arrayFeatures = JSONArray(convertToArray(features))
-            val configurationJson = wrap(arrayFeatures)
+    fun write(featuresConfigFile: String, configurationJson: JSONArray) {
+        File(featuresConfigFile).writeText(configurationJson.toString())
+    }
 
-            write(featuresConfigFile, configurationJson)
-        }
+    fun createConfiguration(featuresFile: String, featuresConfigFile: String) {
+        val objectMapper = ObjectMapper()
+        val features = objectMapper.readValue<Map<String, Int>>(File(featuresFile))
+        val arrayFeatures = JSONArray(convertToArray(features))
+        val configurationJson = wrap(arrayFeatures)
+
+        write(featuresConfigFile, configurationJson)
     }
 }

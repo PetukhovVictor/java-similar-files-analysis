@@ -1,0 +1,6 @@
+[submodule "libs/ast-ngram-extractor"]
+	path = libs/ast-ngram-extractor
+	url = https://github.com/PetukhovVictor/ast-ngram-extractor.git
+[submodule "libs/ast-set2matrix"]
+	path = libs/ast-set2matrix
+	url = https://github.com/PetukhovVictor/ast-set2matrix.git
